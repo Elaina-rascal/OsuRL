@@ -1,0 +1,22 @@
+version: '3'
+services:
+  gpu-service:
+    image: elainasuki/other:pytorch_gpu
+    container_name: osu_rl
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - OMP_WAIT_POLICY=passive
+      - TERM=xterm-256color
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./..:/pytorch
+    runtime: "nvidia"
+    tty: true
+    ports:
+      - "64574:64574/tcp"
+      - "64574:64574/udp"
+    stdin_open: true
+    entrypoint: [ '/bin/bash' ]
+    working_dir: "/pytorch" # 指定默认工作目录

@@ -1,0 +1,27 @@
+{
+    "name": "information-task-container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "gpu-service",
+    "workspaceFolder": "/pytorch",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "llvm-vs-code-extensions.vscode-clangd",
+                "ms-vscode.cmake-tools",
+                "cschlosser.doxdocgen",
+                "augustocdias.tasks-shell-input",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-slideshow",
+                "donjayamanne.githistory",
+                "mhutchie.git-graph"
+            ]
+        },
+        "jetbrains": {
+            "extensions": []
+        }
+    }
+}
